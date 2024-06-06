@@ -86,4 +86,4 @@ full binary rebuild require
     bash /root/install-bin-packages.sh /home/xtreamcodes/iptv_xtream_codes/start_services.sh 
 #
 #   
-   * (dOC4eVER) 2023
+   * (PlusmasTV) 2023
