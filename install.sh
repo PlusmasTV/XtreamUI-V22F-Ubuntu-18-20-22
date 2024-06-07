@@ -427,7 +427,7 @@ adduser --system --shell /bin/false xtreamcodes
 mkdir -p /home/xtreamcodes
 fi
 OSNAME=$(echo $OS | sed  "s| |.|g" )
-wget -q -O /tmp/xtreamcodes.tar.gz http://46.175.149.24/xtreamui/ubuntu18.04-20.04/XtreamUI-CK41/v22_CK46/main_xui_"$OSNAME"_"$VER".tar.gz
+wget -q -O /tmp/xtreamcodes.tar.gz http://46.175.149.24/xtreamui/ubuntu18.04-20.04/XtreamUI-CK41/start//main_xui_"$OSNAME"_"$VER".tar.gz
 tar -xf "/tmp/xtreamcodes.tar.gz" -C "/home/xtreamcodes/"
 rm -r /tmp/xtreamcodes.tar.gz
 mv $MYSQLCNF $MYSQLCNF.xc
