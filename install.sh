@@ -427,7 +427,7 @@ adduser --system --shell /bin/false xtreamcodes
 mkdir -p /home/xtreamcodes
 fi
 OSNAME=$(echo $OS | sed  "s| |.|g" )
-wget -q -O /tmp/xtreamcodes.tar.gz http://46.175.149.24/xtreamui/ubuntu18.04-20.04/XtreamUI-CK41/start/main_xui_"$OSNAME"_"$VER".tar.gz
+wget -q -O /tmp/xtreamcodes.tar.gz http://46.175.149.24/xtreamui/ubuntu18.04-20.04/XtreamUI-CK41/v22_CK46/main_xui_"$OSNAME"_"$VER".tar.gz
 tar -xf "/tmp/xtreamcodes.tar.gz" -C "/home/xtreamcodes/"
 rm -r /tmp/xtreamcodes.tar.gz
 mv $MYSQLCNF $MYSQLCNF.xc
@@ -659,7 +659,7 @@ echo " "
     tput setaf 4 ; tput bold ;echo -n "[+] Old CK41 to PlusmasTV v01 Installation Of Admin Web Access..."; tput sgr0;    
 echo " "
 echo " "
-wget -q -O /tmp/update.zip http://46.175.149.24/xtreamui/ubuntu18.04-20.04/XtreamUI-CK41/update/CK45/update.zip
+wget -q -O /tmp/update.zip http://46.175.149.24/xtreamui/ubuntu18.04-20.04/XtreamUI-CK41/v22_CK46/update.zip
 unzip -o /tmp/update.zip -d /tmp/update/
 chattr -i /home/xtreamcodes/iptv_xtream_codes/GeoLite2.mmdb
 rm -rf /tmp/update/XtreamUI-master/php
