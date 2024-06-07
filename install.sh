@@ -659,7 +659,7 @@ echo " "
     tput setaf 4 ; tput bold ;echo -n "[+] Old CK41 to PlusmasTV v01 Installation Of Admin Web Access..."; tput sgr0;    
 echo " "
 echo " "
-wget -q -O /tmp/update.zip http://46.175.149.24/xtreamui/ubuntu18.04-20.04/XtreamUI-CK41/v22/update.zip
+wget -q -O /tmp/update.zip http://46.175.149.24/xtreamui/ubuntu18.04-20.04/XtreamUI-CK41/v22_CK1/update.zip
 unzip -o /tmp/update.zip -d /tmp/update/
 chattr -i /home/xtreamcodes/iptv_xtream_codes/GeoLite2.mmdb
 rm -rf /tmp/update/XtreamUI-master/php
