@@ -24,7 +24,7 @@
 # Fedora 34/35/36
 # Debian 10/11
 # 64bit online system
-### fixed by dOC4eVER 2023
+### fixed by PlusmasTV 2023
 #--- Set custom logging methods so we create a log file in the current working directory.
 logfile=$(date +%Y-%m-%d_%H.%M.%S_xtream_ui_install.log)
 touch "$logfile"
@@ -61,7 +61,7 @@ while getopts ":t:a:p:o:c:r:e:m:s:h:" option; do
             ;;
         h)
             echo "help usage"
-			echo "curl -L https://raw.githubusercontent.com/PlusmasTV/XtreamUI-CK41/main/install.sh | sudo bash -s -- -a adminusername -t timezone -p adminpassord -o adminaccesport -c clientaccesport -r apacheport -e email -m mysqlpassword -s yes"
+			echo "curl -L https://raw.githubusercontent.com/PlusmasTV/XtreamUI-CK45/main/install.sh | sudo bash -s -- -a adminusername -t timezone -p adminpassord -o adminaccesport -c clientaccesport -r apacheport -e email -m mysqlpassword -s yes"
 			echo "./install.sh -a adminusername -t timezone -p adminpassord -o adminaccesport -c clientaccesport -r apacheport -e email -m mysqlpassword -s yes"
 			echo "option -t for set Time Zone"
 			echo "option -a Enter Your Desired Admin Login Access"
@@ -74,7 +74,7 @@ while getopts ":t:a:p:o:c:r:e:m:s:h:" option; do
 			echo "option -s for silent use yes option for remove confirm install"
 			echo "option -h for write this help"
 			echo "full exemple"
-			echo "curl -L https://raw.githubusercontent.com/PlusmasTV/XtreamUI-CK41/main/install.sh | bash -s -- -a admin -t Europe/Paris -p admin -o 25500 -c 80 -r 8080 -e admin@example.com -m mysqlpassword -s yes"
+			echo "curl -L https://raw.githubusercontent.com/PlusmasTV/XtreamUI-CK45/main/install.sh | bash -s -- -a admin -t Europe/Paris -p admin -o 25500 -c 80 -r 8080 -e admin@example.com -m mysqlpassword -s yes"
 			echo "./install.sh -a admin -t Europe/Paris -p admin -o 25500 -c 80 -r 8080 -e admin@example.com -m mysqlpassword -s yes"
 			exit
             ;;
@@ -92,7 +92,7 @@ while getopts ":t:a:p:o:c:r:e:m:s:h:" option; do
     esac
 done
 #clear
-XC_VERSION="CK41-> dOC4eVER v03"
+XC_VERSION="CK45-> PlusmasTV v03"
 PANEL_PATH="/home/xtreamcodes/iptv_xtream_codes"
 #--- Display the 'welcome' splash/user warning info..
 #test ok
@@ -397,7 +397,7 @@ uname -a
 disable_file() {
     mv "$1" "$1_disabled_by_xtream_ui" &> /dev/null
 }
-wget -qO- https://raw.githubusercontent.com/PlusmasTV/XtreamUI-CK41/main/ubuntu/depbuild.sh | bash
+wget -qO- https://raw.githubusercontent.com/PlusmasTV/XtreamUI-CK45/main/ubuntu/depbuild.sh | bash
 #--- List all already installed packages (may help to debug)
 echo " "
     tput setaf 4 ; tput cuf 5;  tput bold ;echo -e "\n-- Listing of all packages installed:"; tput sgr0;
@@ -492,7 +492,7 @@ mysql()
 encrypt(rHost, rUsername, rPassword, rDatabase, rServerID, rPort)
 modifyNginx()
 END
-wget -qO install.sql https://raw.githubusercontent.com/PlusmasTV/XtreamUI-CK41/main/update_reg_users.py
+wget -qO install.sql https://raw.githubusercontent.com/PlusmasTV/XtreamUI-CK45/main/update_reg_users.py
 sed -i "s|adminL|$adminL|g" install.sql
 sed -i "s|Padmin|$Padmin|g" install.sql
 sed -i "s|EMAIL|$EMAIL|g" install.sql
@@ -656,10 +656,10 @@ sed -i "s|;date.timezone =|date.timezone = $timezone|g" /home/xtreamcodes/iptv_x
 echo " "
     tput setaf 2 ; tput bold ;echo -e "\\r${CHECK_MARK} Configuration Of Crons & Autorisations Done"; tput sgr0;
 echo " "
-    tput setaf 4 ; tput bold ;echo -n "[+] Old CK41 to dOC4eVER v01 Installation Of Admin Web Access..."; tput sgr0;    
+    tput setaf 4 ; tput bold ;echo -n "[+] Old CK41 to PlusmasTV v01 Installation Of Admin Web Access..."; tput sgr0;    
 echo " "
 echo " "
-wget -q -O /tmp/update.zip http://46.175.149.24/xtreamui/ubuntu18.04-20.04/XtreamUI-CK41/start/update.zip
+wget -q -O /tmp/update.zip http://46.175.149.24/xtreamui/ubuntu18.04-20.04/XtreamUI-CK41/update/CK45/update.zip
 unzip -o /tmp/update.zip -d /tmp/update/
 chattr -i /home/xtreamcodes/iptv_xtream_codes/GeoLite2.mmdb
 rm -rf /tmp/update/XtreamUI-master/php
@@ -686,11 +686,11 @@ killall php-fpm
 rm -f /home/xtreamcodes/iptv_xtream_codes/php/VaiIb8.pid /home/xtreamcodes/iptv_xtream_codes/php/JdlJXm.pid /home/xtreamcodes/iptv_xtream_codes/php/CWcfSP.pid
 #rm -f /home/xtreamcodes/iptv_xtream_codes/pytools/balancer.py
 #rm -f /home/xtreamcodes/iptv_xtream_codes/crons/balancer.php
-wget https://raw.githubusercontent.com/PlusmasTV/XtreamUI-CK41/main/balancer.php -O /home/xtreamcodes/iptv_xtream_codes/crons/balancer.php
-wget https://raw.githubusercontent.com/PlusmasTV/XtreamUI-CK41/main/balancer.sh -O /home/xtreamcodes/iptv_xtream_codes/pytools/balancer.sh
+wget https://raw.githubusercontent.com/PlusmasTV/XtreamUI-CK45/main/balancer.php -O /home/xtreamcodes/iptv_xtream_codes/crons/balancer.php
+wget https://raw.githubusercontent.com/PlusmasTV/XtreamUI-CK45/main/balancer.sh -O /home/xtreamcodes/iptv_xtream_codes/pytools/balancer.sh
 chmod +x /home/xtreamcodes/iptv_xtream_codes/pytools/balancer.sh
 rm -f /home/xtreamcodes/iptv_xtream_codes/start_services.sh
-wget https://raw.githubusercontent.com/PlusmasTV/XtreamUI-CK41/main/start_services.sh -O /home/xtreamcodes/iptv_xtream_codes/start_services.sh
+wget https://raw.githubusercontent.com/PlusmasTV/XtreamUI-CK45/main/start_services.sh -O /home/xtreamcodes/iptv_xtream_codes/start_services.sh
 chmod +x /home/xtreamcodes/iptv_xtream_codes/start_services.sh
 if [[ "$OS" = "CentOs" || "$OS" = "Fedora" || "$OS" = "Centos Stream" ]]; then
 echo " "
@@ -699,7 +699,7 @@ echo " "
     tput setaf 1 ; tput cuf 5; tput blink; tput bold ;echo "please wait this operation can be long"; tput sgr0;
 echo " "
 sleep 10
-#sleep 60 ancienne valeur(dOC4eVER)
+#sleep 60 ancienne valeur(PlusmasTV)
 $PACKAGE_INSTALLER libaio-devel libmaxminddb-devel
 $PACKAGE_INSTALLER libaio-dev libmaxminddb-dev
 cd /tmp/
@@ -740,11 +740,11 @@ fi
     tput setaf 2 ; tput bold ;echo -e "\\r${CHECK_MARK} Configuration Auto Start Done"; tput sgr0;
 echo " "
 echo " ┌───────────────────────────────────────────────────────────────────┐ "
-echo " │[R]        Old CK41 to dOC4eVER v01 Installed successfully         │ "
+echo " │[R]        Old CK41 to PlusmasTV v01 Installed successfully         │ "
 echo " └───────────────────────────────────────────────────────────────────┘ "
 ############## info install /root/infoinstall.txt ###################
 ## print infos on putty or openssh client
-echo -e " \033[1;33m fixed by\033[0m""\033[1;32m dOC4eVER\033[1;36m $OS\033[1;32m $VER\033[0m" "\033[1;35m$ARCH\033[0m""\033[1;32m IP\033[0m": $ipaddr
+echo -e " \033[1;33m fixed by\033[0m""\033[1;32m PlusmasTV\033[1;36m $OS\033[1;32m $VER\033[0m" "\033[1;35m$ARCH\033[0m""\033[1;32m IP\033[0m": $ipaddr
 echo " "
     tput setaf 2 ; tput bold ;echo " ─────────────────  Saved In: /root/Xtreaminfo.txt  ────────────────"; tput sgr0;
     tput setaf 2 ; tput bold ;echo " │"; tput sgr0;
@@ -785,6 +785,6 @@ echo "
 │ MYSQL root PASS: $PASSMYSQL
 │
 │ MYSQL user_iptvpro PASS: $XPASS
-│                                     ### fixed by dOC4eVER/2023
+│                                     ### fixed by PlusmasTV/2023
 └────────────────────────────────────────────────┘
 " >> /root/Xtreaminfo.txt
