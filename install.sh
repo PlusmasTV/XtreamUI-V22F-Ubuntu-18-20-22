@@ -92,7 +92,7 @@ while getopts ":t:a:p:o:c:r:e:m:s:h:" option; do
     esac
 done
 #clear
-XC_VERSION="CK45-> PlusmasTV v03"
+XC_VERSION="CK46-> PlusmasTV v03"
 PANEL_PATH="/home/xtreamcodes/iptv_xtream_codes"
 #--- Display the 'welcome' splash/user warning info..
 #test ok
