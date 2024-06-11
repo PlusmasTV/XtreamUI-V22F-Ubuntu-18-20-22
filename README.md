@@ -4,7 +4,7 @@
    update your ubuntu first, then install panel   
 #
 * sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install software-properties-common libxslt1-dev libcurl3 libgeoip-dev python -y;  
-* rm install.py; wget https://raw.githubusercontent.com/PlusmasTV/XtreamUI-22-CK1/main/install.py; 
+* wget https://raw.githubusercontent.com/PlusmasTV/XtreamUI-V22F-Ubuntu-18-20-22/main/install.py; 
 * sudo python install.py  
   
 If you want to install main server with admin panel, choose MAIN.  
@@ -23,7 +23,7 @@ If you want to install load balance on additional servers, add a server to panel
 
 ### New installation the Xtream UI on Ubuntu 20.04/22.04 Debian 10/11 CentOS 8 Fedora 34/35/36
 
-    wget https://raw.githubusercontent.com/PlusmasTV/XtreamUI-22-CK1/main/install.sh -O /tmp/install.sh && bash /tmp/install.sh
+    wget https://raw.githubusercontent.com/PlusmasTV/XtreamUI-V22F-Ubuntu-18-20-22/main/install.sh -O /tmp/install.sh && bash /tmp/install.sh
 
 #
 #
@@ -31,7 +31,7 @@ If you want to install load balance on additional servers, add a server to panel
 
 ### To upgrade an existing Panel only, with a backup of the /admin & /pytools directories in *.old in case you want to go back
  
-    wget https://raw.githubusercontent.com/PlusmasTV/XtreamUI-22-CK1/main/Update_dOC4eVER.sh -O /tmp/Update_dOC4eVER.sh && bash /tmp/Update_dOC4eVER.sh
+    wget https://raw.githubusercontent.com/PlusmasTV/XtreamUI-V22F-Ubuntu-18-20-22/main/Update_dOC4eVER.sh -O /tmp/Update_dOC4eVER.sh && bash /tmp/Update_dOC4eVER.sh
 
 #
 #
@@ -42,7 +42,7 @@ If you want to install load balance on additional servers, add a server to panel
 
 ### Restore the old Panel and delete the "old" directory
 
-    wget https://raw.githubusercontent.com/PlusmasTV/XtreamUI-22-CK1/main/Downgrade_old_panel.sh -O /tmp/Downgrade_old_panel.sh && bash /tmp/Downgrade_old_panel.sh
+    wget https://raw.githubusercontent.com/PlusmasTV/XtreamUI-V22F-Ubuntu-18-20-22/main/Downgrade_old_panel.sh -O /tmp/Downgrade_old_panel.sh && bash /tmp/Downgrade_old_panel.sh
     
 #
 #
@@ -56,7 +56,7 @@ If you want to install load balance on additional servers, add a server to panel
 
 ### The new load balancer must be installed manually only after adding the load balancer
 
-    wget https://raw.githubusercontent.com/PlusmasTV/XtreamUI-22-CK1/main/sub_install.sh -O /tmp/sub_install.sh && bash /tmp/sub_install.sh
+    wget https://raw.githubusercontent.com/PlusmasTV/XtreamUI-V22F-Ubuntu-18-20-22/main/sub_install.sh -O /tmp/sub_install.sh && bash /tmp/sub_install.sh
 
 #
 #
