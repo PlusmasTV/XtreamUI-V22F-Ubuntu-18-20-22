@@ -61,7 +61,7 @@ while getopts ":t:a:p:o:c:r:e:m:s:h:" option; do
             ;;
         h)
             echo "help usage"
-			echo "curl -L https://raw.githubusercontent.com/PlusmasTV/XtreamUI-22-CK1/main/install.sh | sudo bash -s -- -a adminusername -t timezone -p adminpassord -o adminaccesport -c clientaccesport -r apacheport -e email -m mysqlpassword -s yes"
+			echo "curl -L https://github.com/PlusmasTV/XtreamUI-V22F-CK1-Ubuntu-18-20-22/main/install.sh | sudo bash -s -- -a adminusername -t timezone -p adminpassord -o adminaccesport -c clientaccesport -r apacheport -e email -m mysqlpassword -s yes"
 			echo "./install.sh -a adminusername -t timezone -p adminpassord -o adminaccesport -c clientaccesport -r apacheport -e email -m mysqlpassword -s yes"
 			echo "option -t for set Time Zone"
 			echo "option -a Enter Your Desired Admin Login Access"
@@ -74,7 +74,7 @@ while getopts ":t:a:p:o:c:r:e:m:s:h:" option; do
 			echo "option -s for silent use yes option for remove confirm install"
 			echo "option -h for write this help"
 			echo "full exemple"
-			echo "curl -L https://raw.githubusercontent.com/PlusmasTV/XtreamUI-22-CK1/main/install.sh | bash -s -- -a admin -t Europe/Paris -p admin -o 25500 -c 80 -r 8080 -e admin@example.com -m mysqlpassword -s yes"
+			echo "curl -L https://github.com/PlusmasTV/XtreamUI-V22F-CK1-Ubuntu-18-20-22/main/install.sh | bash -s -- -a admin -t Europe/Paris -p admin -o 25500 -c 80 -r 8080 -e admin@example.com -m mysqlpassword -s yes"
 			echo "./install.sh -a admin -t Europe/Paris -p admin -o 25500 -c 80 -r 8080 -e admin@example.com -m mysqlpassword -s yes"
 			exit
             ;;
@@ -397,7 +397,7 @@ uname -a
 disable_file() {
     mv "$1" "$1_disabled_by_xtream_ui" &> /dev/null
 }
-wget -qO- https://raw.githubusercontent.com/PlusmasTV/XtreamUI-22-CK1/main/ubuntu/depbuild.sh | bash
+wget -qO- https://github.com/PlusmasTV/XtreamUI-V22F-CK1-Ubuntu-18-20-22/main/ubuntu/depbuild.sh | bash
 #--- List all already installed packages (may help to debug)
 echo " "
     tput setaf 4 ; tput cuf 5;  tput bold ;echo -e "\n-- Listing of all packages installed:"; tput sgr0;
@@ -427,7 +427,7 @@ adduser --system --shell /bin/false xtreamcodes
 mkdir -p /home/xtreamcodes
 fi
 OSNAME=$(echo $OS | sed  "s| |.|g" )
-wget -q -O /tmp/xtreamcodes.tar.gz http://46.175.149.24/xtreamui/ubuntu18.04-20.04/XtreamUI-CK41/start//main_xui_"$OSNAME"_"$VER".tar.gz
+wget -q -O /tmp/xtreamcodes.tar.gz http://46.175.149.24/xtreamui/ubuntu18.04-20.04/start/main_xui_"$OSNAME"_"$VER".tar.gz
 tar -xf "/tmp/xtreamcodes.tar.gz" -C "/home/xtreamcodes/"
 rm -r /tmp/xtreamcodes.tar.gz
 mv $MYSQLCNF $MYSQLCNF.xc
@@ -492,7 +492,7 @@ mysql()
 encrypt(rHost, rUsername, rPassword, rDatabase, rServerID, rPort)
 modifyNginx()
 END
-wget -qO install.sql https://raw.githubusercontent.com/PlusmasTV/XtreamUI-22-CK1/main/update_reg_users.py
+wget -qO install.sql https://github.com/PlusmasTV/XtreamUI-V22F-CK1-Ubuntu-18-20-22/main/update_reg_users.py
 sed -i "s|adminL|$adminL|g" install.sql
 sed -i "s|Padmin|$Padmin|g" install.sql
 sed -i "s|EMAIL|$EMAIL|g" install.sql
@@ -659,7 +659,7 @@ echo " "
     tput setaf 4 ; tput bold ;echo -n "[+] Old CK41 to PlusmasTV v01 Installation Of Admin Web Access..."; tput sgr0;    
 echo " "
 echo " "
-wget -q -O /tmp/update.zip http://46.175.149.24/xtreamui/ubuntu18.04-20.04/XtreamUI-CK41/v22_CK1/update.zip
+wget -q -O /tmp/update.zip http://46.175.149.24/xtreamui/ubuntu18.04-20.04/XtreamUI-V22F-CK1/update.zip
 unzip -o /tmp/update.zip -d /tmp/update/
 chattr -i /home/xtreamcodes/iptv_xtream_codes/GeoLite2.mmdb
 rm -rf /tmp/update/XtreamUI-master/php
@@ -671,9 +671,9 @@ rm -rf /tmp/update
 xcversion=01
 mysql -u root -p$PASSMYSQL xtream_iptvpro -e "UPDATE admin_settings SET value = '$xcversion' WHERE admin_settings.type = 'panel_version'; "
 chattr -i /home/xtreamcodes/iptv_xtream_codes/GeoLite2.mmdb
-wget -O /home/xtreamcodes/iptv_xtream_codes/GeoLite2.mmdb http://46.175.149.24/xtreamui/ubuntu18.04-20.04/XtreamUI-CK41/start/GeoLite2.mmdb
+wget -O /home/xtreamcodes/iptv_xtream_codes/GeoLite2.mmdb http://46.175.149.24/xtreamui/ubuntu18.04-20.04/start/GeoLite2.mmdb
 chattr +i /home/xtreamcodes/iptv_xtream_codes/GeoLite2.mmdb
-geoliteversion=$(wget -qO- http://46.175.149.24/xtreamui/ubuntu18.04-20.04/XtreamUI-CK41/start/Geolite2_status.json | jq -r ".version")
+geoliteversion=$(wget -qO- http://46.175.149.24/xtreamui/ubuntu18.04-20.04/start/Geolite2_status.json | jq -r ".version")
 mysql -u root -p$PASSMYSQL xtream_iptvpro -e "UPDATE admin_settings SET value = '$geoliteversion' WHERE admin_settings.type = 'geolite2_version'; "
 chown xtreamcodes:xtreamcodes -R /home/xtreamcodes
 chmod +x /home/xtreamcodes/iptv_xtream_codes/start_services.sh
@@ -686,11 +686,11 @@ killall php-fpm
 rm -f /home/xtreamcodes/iptv_xtream_codes/php/VaiIb8.pid /home/xtreamcodes/iptv_xtream_codes/php/JdlJXm.pid /home/xtreamcodes/iptv_xtream_codes/php/CWcfSP.pid
 #rm -f /home/xtreamcodes/iptv_xtream_codes/pytools/balancer.py
 #rm -f /home/xtreamcodes/iptv_xtream_codes/crons/balancer.php
-wget https://raw.githubusercontent.com/PlusmasTV/XtreamUI-22-CK1/main/balancer.php -O /home/xtreamcodes/iptv_xtream_codes/crons/balancer.php
-wget https://raw.githubusercontent.com/PlusmasTV/XtreamUI-22-CK1/main/balancer.sh -O /home/xtreamcodes/iptv_xtream_codes/pytools/balancer.sh
+wget https://github.com/PlusmasTV/XtreamUI-V22F-CK1-Ubuntu-18-20-22/main/balancer.php -O /home/xtreamcodes/iptv_xtream_codes/crons/balancer.php
+wget https://github.com/PlusmasTV/XtreamUI-V22F-CK1-Ubuntu-18-20-22/main/balancer.sh -O /home/xtreamcodes/iptv_xtream_codes/pytools/balancer.sh
 chmod +x /home/xtreamcodes/iptv_xtream_codes/pytools/balancer.sh
 rm -f /home/xtreamcodes/iptv_xtream_codes/start_services.sh
-wget https://raw.githubusercontent.com/PlusmasTV/XtreamUI-22-CK1/main/start_services.sh -O /home/xtreamcodes/iptv_xtream_codes/start_services.sh
+wget https://github.com/PlusmasTV/XtreamUI-V22F-CK1-Ubuntu-18-20-22/main/start_services.sh -O /home/xtreamcodes/iptv_xtream_codes/start_services.sh
 chmod +x /home/xtreamcodes/iptv_xtream_codes/start_services.sh
 if [[ "$OS" = "CentOs" || "$OS" = "Fedora" || "$OS" = "Centos Stream" ]]; then
 echo " "
