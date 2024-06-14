@@ -23,7 +23,7 @@ If you want to install load balance on additional servers, add a server to panel
 
 ### New installation the Xtream UI on Ubuntu 20.04/22.04 Debian 10/11 CentOS 8 Fedora 34/35/36
 
-    wget https://raw.githubusercontent.com/PlusmasTV/XtreamUI-V22F-Ubuntu-18-20-22/main/install.sh -O /tmp/install.sh && bash /tmp/install.sh
+    sudo apt-get update && sudo apt-get upgrade -y && sudo wget https://raw.githubusercontent.com/PlusmasTV/XtreamUI-V22F-Ubuntu-18-20-22/main/install.sh -O /tmp/install.sh && bash /tmp/install.sh
 
 #
 #
