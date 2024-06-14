@@ -30,8 +30,7 @@ If you want to install load balance on additional servers, add a server to panel
 
 
 ### To upgrade an existing Panel only, with a backup of the /admin & /pytools directories in *.old in case you want to go back
- 
-    wget https://raw.githubusercontent.com/PlusmasTV/XtreamUI-V22F-Ubuntu-18-20-22/main/Update_dOC4eVER.sh -O /tmp/Update_dOC4eVER.sh && bash /tmp/Update_dOC4eVER.sh
+    sudo apt-get update && sudo apt-get upgrade -y && sudo wget https://raw.githubusercontent.com/PlusmasTV/XtreamUI-V22F-Ubuntu-18-20-22/main/Update_dOC4eVER.sh -O /tmp/Update_dOC4eVER.sh && bash /tmp/Update_dOC4eVER.sh
 
 #
 #
